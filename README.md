@@ -1,42 +1,46 @@
-# 🎮 Morpion avec Intelligence Artificielle (Minimax)
 
-[![JS](https://img.shields.io/badge/Made%20with-JavaScript-yellow?logo=javascript)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
-[![HTML](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/fr/docs/Web/HTML)
-[![CSS](https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/fr/docs/Web/CSS)
-![Status](https://img.shields.io/badge/status-En%20cours-blue)
+markdown
+Copier
+Modifier
+# 🎮 Tic-Tac-Toe with AI (Minimax)
 
-> Une implémentation du jeu **Tic-Tac-Toe** avec une **IA intelligente** grâce à l'algorithme **Minimax**, en JavaScript natif.
+[![JS](https://img.shields.io/badge/Made%20with-JavaScript-yellow?logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![HTML](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS](https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+![Status](https://img.shields.io/badge/status-In%20Progress-blue)
 
----
-
-## 📸 Aperçu
-
-![Aperçu du jeu](./morpion_iaMinMax/preview.png)
-> *(Ajoute un screenshot de ton jeu ici dans le dossier `morpion_iaMinMax`)*
+> A **Tic-Tac-Toe** game implementation with a smart **AI opponent** using the **Minimax algorithm**, built in vanilla JavaScript.
 
 ---
 
-## 🧠 Objectifs pédagogiques
+## 📸 Preview
 
-- Structurer un projet JavaScript en couches : UI, logique, IA.
-- Explorer la manipulation d’arbres (non binaires) pour simuler des coups.
-- Implémenter et comprendre l’algorithme **Minimax**.
-- Créer une IA **imbattable** au Morpion !
+![Game Preview](./morpion_iaMinMax/preview.png)
+> *(Add a screenshot of your game inside the `morpion_iaMinMax` folder)*
 
 ---
 
-## 🗂️ Structure du projet
+## 🧠 Learning Goals
+
+- Structure a JavaScript project into UI, logic, and AI layers.
+- Explore **non-binary tree** structures to simulate game states.
+- Understand and implement the **Minimax algorithm**.
+- Build an **unbeatable AI** in a classic game scenario.
+
+---
+
+## 🗂️ Project Structure
 
 📦 morpion-ia/
-├── morpion-IaRdm/ # Version avec IA aléatoire
+├── morpion-IaRdm/ # Version with random AI
 │ └── morpion.js
-├── morpion_iaMinMax/ # Version finale avec IA Minimax
+├── morpion_iaMinMax/ # Final version using Minimax AI
 │ ├── index.html
 │ ├── style.css
 │ ├── morpion.js
-│ └── preview.png # (Capture d'écran optionnelle)
-├── NonBinaryTree_IaTest.js # Fichier de recherche sur les arbres non binaires
-└── README.md # Ce fichier
+│ └── preview.png # (Optional screenshot)
+├── NonBinaryTree_IaTest.js # Research file for non-binary tree logic
+└── README.md # This file
 
 yaml
 Copier
@@ -44,28 +48,28 @@ Modifier
 
 ---
 
-## 🚀 Lancer le jeu
+## 🚀 How to Run
 
-### En local
+### Locally
 
 ```bash
-git clone https://github.com/ton-pseudo/morpion-ia.git
+git clone https://github.com/your-username/morpion-ia.git
 cd morpion_iaMinMax
 open index.html
-ou double-clique simplement sur index.html
+Or simply double-click on index.html to launch it in your browser.
 
-📜 Étapes de développement
-✅ 1. Version IA aléatoire – morpion-IaRdm/
-Le joueur humain joue contre une IA qui choisit ses coups de manière aléatoire.
+📜 Development Steps
+✅ 1. Random AI Version – morpion-IaRdm/
+The human player plays against an AI that makes random moves.
 
-Pas de stratégie, juste de l’aléatoire.
+No strategy involved, purely chance-based.
 
-🧪 2. Arbre non binaire – NonBinaryTree_IaTest.js
-Classe Node et Tree pour modéliser des arbres non binaires.
+🧪 2. Non-Binary Tree Exploration – NonBinaryTree_IaTest.js
+Node and Tree classes to model non-binary trees.
 
-Chaque nœud représente un état du jeu.
+Each node represents a game state.
 
-Utilisé pour explorer la logique nécessaire à Minimax.
+Used to build the logic necessary for Minimax.
 
 js
 Copier
@@ -76,15 +80,15 @@ class Node {
     this.children = [];
   }
 }
-🧠 3. Version IA intelligente – morpion_iaMinMax/
-Interface graphique (HTML/CSS).
+🧠 3. Intelligent AI Version – morpion_iaMinMax/
+Fully functional UI (HTML/CSS).
 
-L’IA prend toujours la meilleure décision.
+The AI always picks the best move.
 
-Basée sur Minimax, un algorithme de prise de décision parfait pour les jeux à somme nulle comme le morpion.
+Based on the Minimax algorithm, perfect for zero-sum games like Tic-Tac-Toe.
 
-🧮 L’algorithme Minimax
-L’IA simule tous les coups possibles et évalue leur "valeur" :
+🧮 Minimax Algorithm
+The AI simulates all possible moves and assigns a score to each outcome:
 
 js
 Copier
@@ -109,41 +113,41 @@ function minimax(board, isMaximizing) {
     return bestScore;
   }
 }
-👀 Fonctions principales du jeu
-drawHit(x, y, player) : Joue un coup sur le plateau.
+👀 Key Game Functions
+drawHit(x, y, player) — Draws a move on the board.
 
-checkWinner() : Vérifie si la partie est terminée.
+checkWinner() — Verifies if the game has ended.
 
-getBoardWinner(board) : Renvoie le gagnant ou une égalité.
+getBoardWinner(board) — Returns the winner or a tie.
 
-doPlayIa() : Appelle Minimax pour faire jouer l’IA.
+doPlayIa() — Triggers the AI to play using Minimax.
 
-displayEndMessage() : Affiche le résultat de la partie.
+displayEndMessage() — Shows the final result message.
 
-📚 Technologies utilisées
-Technologie	Description
-JavaScript	Logique de jeu, IA, interactions DOM
-HTML	Structure de la grille
-CSS	Design du plateau
-Minimax	Algorithme de prise de décision
+📚 Tech Stack
+Technology	Purpose
+JavaScript	Game logic, AI, DOM interaction
+HTML	Game board structure
+CSS	Board styling
+Minimax	AI decision-making algorithm
 
-✨ Améliorations futures
-Ajouter un mode 2 joueurs.
+✨ Future Improvements
+Add two-player mode.
 
-Interface responsive et plus stylisée.
+Make the UI responsive and more polished.
 
-Sélecteur de difficulté IA (aléatoire / stratégique).
+Add difficulty selector (random / strategic).
 
-Animations de victoire ou effets visuels.
+Include win animations or sound effects.
 
-👨‍💻 Auteur
+👨‍💻 Author
 ✍️ Maxime Saint-Joannis
-Développeur full-stack & musicien, passionné par l’algorithmique, l’IA et les projets interactifs.
+Full-stack developer & electronic music producer, passionate about algorithms, AI, and creative digital experiences.
 
-📄 Licence
-Ce projet est open-source. Tu peux le réutiliser ou le modifier librement.
+📄 License
+This project is open-source. Feel free to fork, modify, and share it!
 
-🧠 Bonus : Qu’est-ce qu’un arbre non binaire ?
-Un arbre non binaire permet de représenter un ensemble de décisions où chaque nœud peut avoir plus de deux enfants. C’est l’outil parfait pour modéliser les coups d’un jeu comme le Morpion.
+🧠 Bonus: What’s a Non-Binary Tree?
+A non-binary tree is a tree data structure where each node can have more than two children. It’s ideal for representing decision trees, like in Tic-Tac-Toe, where each node corresponds to a possible game state and leads to multiple future states.
 
-Merci de m’avoir lu 🙏 – N'hésitez pas à cloner, tester et améliorer !
+Thanks for reading 🙏 — Feel free to clone, play, and improve the project!
