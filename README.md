@@ -22,29 +22,10 @@ Modifier
 
 ## 🧠 Learning Goals
 
-- Structure a JavaScript project into UI, logic, and AI layers.
-- Explore **non-binary tree** structures to simulate game states.
-- Understand and implement the **Minimax algorithm**.
-- Build an **unbeatable AI** in a classic game scenario.
-
----
-
-## 🗂️ Project Structure
-
-📦 morpion-ia/
-├── morpion-IaRdm/ # Version with random AI
-│ └── morpion.js
-├── morpion_iaMinMax/ # Final version using Minimax AI
-│ ├── index.html
-│ ├── style.css
-│ ├── morpion.js
-│ └── preview.png # (Optional screenshot)
-├── NonBinaryTree_IaTest.js # Research file for non-binary tree logic
-└── README.md # This file
-
-yaml
-Copier
-Modifier
+- Structurer un projet JavaScript en couches : UI, logique, IA.
+- Explorer la manipulation d’arbres (non binaires) pour simuler des coups.
+- Implémenter et comprendre l’algorithme **Minimax**.
+- Créer une IA **imbattable** au Morpion !
 
 ---
 
